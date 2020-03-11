@@ -1,27 +1,49 @@
-# Client
+[![Build Status](https://travis-ci.com/walteravelino/Projetos.svg?branch=master)](https://travis-ci.com/walteravelino/Projetos)
+<img src = "https://img.shields.io/github/languages/top/walteravelino/AppCrud">
+<a href="https://github.com/walteravelino/Projetos/blob/master/LICENSE"><img src = "https://img.shields.io/github/license/walteravelino/Projetos"></a>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-## Development server
+# AppCrud MEAN
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Instruções
 
-## Code scaffolding
+### Server <br>
+- clone o repositório https://github.com/walteravelino/AppCrud.git<br>
+  - Instale os modulos  <br>
+  - ```cd AppCrud``` <br>
+  - ```npm install```<br>
+- Inicie o servidor<br>
+  - ```node server.js``` ou ```npx nodemon server.js``` <br>
+  - será iniciado em http://localhost:5000/ <br>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Client <br>
+- Instale os modulos  <br>
+  - ```cd AppCrud/client```<br>
+  - ```npm install```<br>
+- Inicie o app<br>
+  - ```ng serve --o``` ou ```npx ng serve --o```<br>
+  - será iniciado em http://localhost:4200/  <br>
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Autor
 
-## Running unit tests
+👤 **Walter Avelino**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- StackOverFlow [@walteravelino](https://stackoverflow.com/users/13001807/walter-avelino)
+- Github: [@walteravelino](https://github.com/walteravelino)
+- Linkedin: [@walteravelino](https://linkedin.com/in/walter-avelino-434197105)
+- DEV: [@walteravelino](https://dev.to/walteravelino)
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## 📝 Licença
 
-## Further help
+Copyright © 2020 [Walter Avelino](https://github.com/walteravelino).<br />
+Os projetos estão sob a licença [MIT](https://github.com/walteravelino/Projetos/blob/master/LICENSE).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+<img src = "https://github.com/walteravelino/Posts/blob/master/images/register.png">
+
+<img src = "https://github.com/walteravelino/Posts/blob/master/images/login.png">
+
+<img src = "https://github.com/walteravelino/Posts/blob/master/images/auth.png">
+
+<img src = "https://github.com/walteravelino/Posts/blob/master/images/update_user.png">
