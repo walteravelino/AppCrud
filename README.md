@@ -1,0 +1,49 @@
+[![Build Status](https://travis-ci.com/walteravelino/Projetos.svg?branch=master)](https://travis-ci.com/walteravelino/Projetos)
+<img src = "https://img.shields.io/github/languages/top/walteravelino/flutter_genius">
+<a href="https://github.com/walteravelino/Projetos/blob/master/LICENSE"><img src = "https://img.shields.io/github/license/walteravelino/Projetos"></a>
+
+<img src = "https://github.com/walteravelino/Posts/blob/master/images/register.png" width="400">
+
+<img src = "https://github.com/walteravelino/Posts/blob/master/images/login.png" width="400">
+
+<img src = "https://github.com/walteravelino/Posts/blob/master/images/auth.png" width="400">
+
+<img src = "https://github.com/walteravelino/Posts/blob/master/images/update_user.png" width="400">
+
+
+# AppCrud MEAN
+
+## Instruções
+
+### Server <br>
+- clone o repositório https://github.com/walteravelino/AppCrud.git<br>
+  - Instale os modulos  <br>
+  - ```cd AppCrud``` <br>
+  - ```npm install```<br>
+- Inicie o servidor<br>
+  - ```node server.js``` ou ```npx nodemon server.js``` <br>
+  - será iniciado em http://localhost:5000/ <br>
+
+### Client <br>
+- Instale os modulos  <br>
+  - ```cd AppCrud/client```<br>
+  - ```npm install```<br>
+- Inicie o app<br>
+  - ```ng serve --o``` ou ```npx ng serve --o```<br>
+  - será iniciado em http://localhost:4200/  <br>
+
+
+## Autor
+
+👤 **Walter Avelino**
+
+- StackOverFlow [@walteravelino](https://stackoverflow.com/users/13001807/walter-avelino)
+- Github: [@walteravelino](https://github.com/walteravelino)
+- Linkedin: [@walteravelino](https://linkedin.com/in/walter-avelino-434197105)
+- DEV: [@walteravelino](https://dev.to/walteravelino)
+
+
+## 📝 Licença
+
+Copyright © 2020 [Walter Avelino](https://github.com/walteravelino).<br />
+Os projetos estão sob a licença [MIT](https://github.com/walteravelino/Projetos/blob/master/LICENSE).
