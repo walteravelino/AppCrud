@@ -1,0 +1,128 @@
+<div class="textCenter" *ngIf="successMsg">
+  <div class="alert alert-success" role="alert">
+    your registration is successfull ! taking you to login page
+  </div>
+</div>
+<div class="container">
+  <div class="row centered-form">
+    <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title textCenter">Please sign up</h3>
+       </div>
+       <div class="panel-body">
+        <form name="regForm" [formGroup]="regForm" (ngSubmit)="regForm.valid && onSubmit()">
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+              <div class="form-group">
+                <input type="text" formControlName="name" name="name" id="name" class="form-control" placeholder="Name" [ngClass]="{'is-invalid':regForm.get('name').touched && regForm.get('name').invalid}" required   />
+                <div *ngIf="regForm.get('name').touched && regForm.get('name').invalid" class="alert-danger invalid-feedback">
+                  <div>First Name is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+              <div class="form-group">
+                <input type="email" formControlName="email" name="email" id="email" class="form-control" placeholder="Email" [ngClass]="{'is-invalid':regForm.get('email').touched && regForm.get('email').invalid}"   />
+                <div *ngIf="regForm.get('email').touched && regForm.get('email').invalid"  class="alert-danger invalid-feedback">
+                  <div *ngIf="regForm.get('email').errors.required">Email is required</div>
+                  <div *ngIf="regForm.get('email').errors.email">Email must be a valid email Address</div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+              <div class="form-group">
+                <input type="text" maxlength="10" (keypress)=_keyPress($event) formControlName="mobile" name="mobile" id="mobile" class="form-control" placeholder="Mobile" [ngClass]="{'is-invalid':regForm.get('mobile').touched && regForm.get('mobile').invalid}" />
+                <div *ngIf="regForm.get('mobile').touched && regForm.get('mobile').invalid"  class="alert-danger invalid-feedback">
+                  <div *ngIf="regForm.get('mobile').errors.required">Mobile is required</div>
+                  <div *ngIf="regForm.get('mobile').errors.minlength">Mobile must be 10 digit</div>
+              </div>
+            </div>
+          </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+              <div class="form-group">
+                <input type="password" formControlName="password" name="password" id="password" class="form-control" placeholder="Password" [ngClass]="{'is-invalid':regForm.get('password').touched && regForm.get('password').invalid}" />
+                <div *ngIf="regForm.get('password').touched && regForm.get('password').invalid"  class="alert-danger invalid-feedback">
+                  <div *ngIf="regForm.get('password').errors.required">Password is required</div>
+                  <div *ngIf="regForm.get('password').errors.minlength">Password  must be a letaset 6 charector</div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+              <div class="form-group">
+                <my-date-picker name="dob" [options]="myDatePickerOptions" formControlName="dob" placeholder="Date of birth"
+                                [ngClass]="{'is-invalid':regForm.get('dob').touched && regForm.get('dob').invalid}">
+
+                </my-date-picker>
+                <div *ngIf="regForm.get('dob').touched && regForm.get('dob').invalid"  class="alert-danger invalid-feedback">
+                  <div *ngIf="regForm.get('dob').errors.required">DOB is required</div>
+                </div>
+              </div>
+            </div>
+            <!--<div class="col-xs-6 col-sm-6 col-md-6">-->
+              <!--<div class="form-group">-->
+                <!--<label>-->
+                  <!--<input type="radio" value="Male" formControlName="gender" selected>-->
+                    <!--<span>male</span>-->
+                <!--</label>-->
+
+                <!--<label>-->
+                  <!--<input  type="radio" value="Female" formControlName="gender">-->
+                    <!--<span>female</span>-->
+                <!--</label>-->
+              <!--</div>-->
+            <!--</div>-->
+
+            <div class="form-group col-md-6">
+              <div class="form-group" style="margin-bottom: 6px;">
+                <!--<label style="display: flex;">Gender</label>-->
+                <!--<input class="form-control" formControlName="gender" type="password">-->
+                <select id="inputState" class="form-control" formControlName="gender" style="height: 34px;">
+                  <option value="male" selected>male</option>
+                  <option value="female">female</option>
+                </select>
+              </div>
+              <div
+                *ngIf="regForm.controls['gender'].invalid && (regForm.controls['gender'].dirty || regForm.controls['gender'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="regForm.controls['gender'].errors.required">
+                  Gender is required.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+              <div class="form-group">
+                <input type="text" formControlName="url" name="url" id="mobile" class="form-control" placeholder="url" [ngClass]="{'is-invalid':regForm.get('url').touched && regForm.get('url').invalid}" />
+                <div *ngIf="regForm.get('url').touched && regForm.get('url').invalid"  class="alert-danger invalid-feedback">
+                  <div *ngIf="regForm.get('url').errors.required">URL is required</div>
+                  <div *ngIf="regForm.get('url').errors.pattern">Invalid URL</div>
+              </div>
+            </div>
+          </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+              <div class="form-group">
+                <textarea formControlName="desc" class="form-control" name="desc" id="desc" rows="3" placeholder="Description" [ngClass]="{'is-invalid':regForm.get('desc').touched && regForm.get('desc').invalid}"></textarea>
+                <div *ngIf="regForm.get('desc').touched && regForm.get('desc').invalid"  class="alert-danger invalid-feedback">
+                  <div *ngIf="regForm.get('desc').errors.required">Description is required</div>
+                </div>
+            </div>
+          </div>
+          </div>
+          <button class="btn btn-primary"  [disabled]="!regForm.valid">Register</button>
+          <button class="btn btn-primary login-reg"  routerLink="/">Login</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+</div>

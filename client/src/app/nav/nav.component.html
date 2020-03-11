@@ -1,0 +1,12 @@
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <!-- Navbar content -->
+  <p class="classscenter" color="primary">
+    <button class="btn btn-success btnspace" *ngIf="auth.isLoggedIn()" routerLink="/dashboard">Home</button>
+    <button class="btn btn-success btnspace"  *ngIf="auth.isLoggedIn() && role == 'admin'" routerLink="/user" >Add User</button>
+
+
+    <button class="btn btn-success"  *ngIf="auth.isLoggedIn()" (click)="auth.logout()">Logout</button>
+  </p>
+</nav>
+
+

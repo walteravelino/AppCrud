@@ -1,0 +1,22 @@
+.containerSize {
+  display: flex;
+  justify-content: center;
+}
+
+.btncenter{
+  justify-content: center;
+  display: flex;
+  margin-bottom: 3%;
+}
+
+.adduser{
+  margin-top: 0px;
+  line-height: 0.1;
+  margin-bottom: 0px;
+}
+
+.textCenter{
+  text-align: center;
+}
+
+

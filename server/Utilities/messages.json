@@ -1,0 +1,6 @@
+{
+    "usernameExists" : "Username already Exists",
+    "userNotFound" : "Username Not Found",
+    "userOrPasswordWrong" : "Username or Password Wrong",
+    "userNotRegister" : "User not registered ! Please sing up first"
+}

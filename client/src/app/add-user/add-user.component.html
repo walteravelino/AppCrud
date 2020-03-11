@@ -1,0 +1,107 @@
+<div class="textCenter" *ngIf="successMsgupdate">
+  <div class="alert alert-success" role="alert">
+    you have  successfully updated the User
+  </div>
+</div>
+<div class="textCenter" *ngIf="successMsAdd">
+  <div class="alert alert-success" role="alert">
+    you have successfully Added the User Username and password are sent to User Email
+  </div>
+</div>
+<div class="textCenter" *ngIf="errormsg">
+  <div class="alert alert-warning" role="alert">
+    Email already exists
+  </div>
+</div>
+<div class="container containerSize">
+  <div class="col-md-6">
+    <h2 class="text-center adduser">{{empformlabel}}</h2>
+    <form [formGroup]="addForm" novalidate class="form">
+      <div class="form-group">
+        <label >Name</label>
+        <input formControlName="name" placeholder="Name" name="name" class="form-control" id="name">
+        <div class="alert-danger invalid-feedback" *ngIf="addForm.get('name').hasError('required') && addForm.get('name').touched">
+          Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label >Email</label>
+        <input type="email" formControlName="email" placeholder="Email" name="email" class="form-control" id="email">
+        <div class="alert-danger invalid-feedback" *ngIf="addForm.get('email').hasError('required') && addForm.get('email').touched">
+          Email is required
+        </div>
+        <div class="alert-danger invalid-feedback" *ngIf="addForm.get('email').invalid && addForm.get('email').touched">Email must be a valid email Address</div>
+
+      </div>
+
+      <div class="form-group">
+        <label >DOB</label>
+        <my-date-picker name="dob" [options]="myDatePickerOptions" formControlName="dob" placeholder="Date of birth">
+
+        </my-date-picker>
+        <div class="alert-danger invalid-feedback" *ngIf=" addForm.get('dob').hasError('required') && addForm.get('dob').touched">
+        dob is required
+      </div>
+      </div>
+      <div class="form-group">
+        <label >Mobile</label>
+        <input formControlName="mobile" maxlength="10" (keypress)=_keyPress($event) placeholder="mobile" name="mobile" class="form-control" id="mobile">
+        <div class="alert-danger invalid-feedback" *ngIf=" addForm.get('mobile').hasError('required') && addForm.get('mobile').touched">
+          mobile is required
+        </div>
+        <div class="alert-danger invalid-feedback" *ngIf="addForm.get('mobile').hasError('minlength')">Mobile must be 10 digit</div>
+      </div>
+      <div class="form-group">
+        <label >Description</label>
+        <textarea formControlName="desc" placeholder="description" name="desc" class="form-control" id="desc">  </textarea>
+        <div class="alert-danger invalid-feedback" *ngIf=" addForm.get('desc').hasError('required') && addForm.get('desc').touched">
+          description is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label >URL</label>
+        <input formControlName="url" placeholder="url" name="desc" class="form-control" id="url" [ngClass]="{'is-invalid':addForm.get('url').touched && addForm.get('url').invalid}"/>
+        <div *ngIf="addForm.get('url').touched && addForm.get('url').invalid"  class="alert-danger invalid-feedback">
+          <div *ngIf="addForm.get('url').errors.required">URL is required</div>
+          <div *ngIf="addForm.get('url').errors.pattern">Invalid URL</div>
+        </div>
+      </div>
+      <!--<div>-->
+        <!--<label>-->
+          <!--<input type="radio" value="Male" formControlName="gender" selected>-->
+          <!--<span>male</span>-->
+        <!--</label>-->
+        <!--<label>-->
+          <!--<input type="radio" value="Female" formControlName="gender">-->
+          <!--<span>female</span>-->
+        <!--</label>-->
+      <!--</div>-->
+      <div class="form-group">
+        <div class="form-group">
+          <!--<label style="display: flex;">Gender</label>-->
+          <!--<input class="form-control" formControlName="gender" type="password">-->
+          <select id="inputState" class="form-control" formControlName="gender" placeholder="select Gender">
+            <option value="male" selected>male</option>
+            <option value="female">female</option>
+          </select>
+        </div>
+        <div class="alert-danger invalid-feedback" *ngIf=" addForm.get('gender').hasError('required') && addForm.get('gender').touched">
+          Gender is required
+        </div>
+        <!--<div-->
+          <!--*ngIf="addForm.controls['gender'].invalid && (addForm.controls['gender'].dirty || addForm.controls['gender'].touched)"-->
+          <!--class="alert alert-danger">-->
+          <!--<div *ngIf="addForm.controls['gender'].errors.required">-->
+            <!--Gender is required.-->
+          <!--</div>-->
+        <!--</div>-->
+      </div>
+
+      <div class="btncenter">
+        <button class="btn btn-success" [disabled]='addForm.invalid' *ngIf="btnvisibility" (click)="onSubmit()">Save</button>
+        <button class="btn btn-success" [disabled]='addForm.invalid' *ngIf="!btnvisibility" (click)="onUpdate()">Update</button>
+      </div>
+    </form>
+  </div>
+</div>

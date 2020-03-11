@@ -1,0 +1,31 @@
+.containerSize {
+  display: flex;
+  justify-content: center;
+}
+
+.rowSize{
+  width: 40%;
+}
+
+.loginForm{
+  padding: 5%;
+}
+
+.reg-btn{
+  margin-top: 2%;
+}
+
+.css1{
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.css2{
+  background-color: #87af8c;
+}
+
+.textCenter{
+  text-align: center;
+}
+

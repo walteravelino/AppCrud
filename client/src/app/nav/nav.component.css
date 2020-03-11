@@ -1,0 +1,11 @@
+.classscenter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1%;
+  justify-content: flex-end;
+}
+
+.btnspace{
+  margin-right: 1%;
+}
